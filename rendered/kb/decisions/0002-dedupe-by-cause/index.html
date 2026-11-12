@@ -9,11 +9,11 @@
 		<link href="../../../_app/immutable/chunks/BYAqoTqv.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CHfFqfNT.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/Bag4TE3p.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.DzvqeDHd.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.BE-YGs6r.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.CTf4XHXr.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DK3Fl9T5.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/4.CLseljb1.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DLUlHWM6.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/4.BfphpJWe.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/CjTJ8EMC.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DkoUumqI.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/YCV98jUa.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BXWM2-hM.js" rel="modulepreload">
@@ -50,22 +50,26 @@ not a matching spike in new reports. A merge timestamp does not establish when a
 failure began. Use receipt times for arrival trends and merge times for desk activity.</p> <h2>Check the rule</h2> <div class="try svelte-gq0h2h"><!--[--><fieldset class="svelte-gq0h2h"><legend>report A</legend> <select aria-label="tenant"><!--[--><option selected="">alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option>kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>hint</code></fieldset><fieldset class="svelte-gq0h2h"><legend>report B</legend> <select aria-label="tenant"><!--[--><option>alder.physio</option><option>copper.studio</option><option>harbour.dental</option><option selected="">kettle.books</option><option>lantern.row</option><option>long.table</option><option>morrow.tax</option><option>nine.lanterns</option><option>pale.harbour</option><option>ridge.clinic</option><option>stone.and.sons</option><!--]--></select> <select aria-label="channel"><!--[--><option>app</option><option>email</option><option selected="">form</option><!--]--></select> <input value="Booking on the wrong date" aria-label="subject"/> <code>parser</code></fieldset><!--]--> <p class="verdict svelte-gq0h2h">different causes — keep apart</p></div> <table><thead><tr><th>case</th><th>same subject</th><th>same cause</th></tr></thead><tbody><!--[--><tr><td>app vs email, same tenant</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>same subject, same tenant, different channel</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>same subject, same channel, different tenant</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><tr><td>different subject, same way in</td><td>no</td><td class="svelte-gq0h2h dup">yes</td></tr><tr><td>no tenant on file</td><td>yes</td><td class="svelte-gq0h2h">no</td></tr><!--]--></tbody></table><!----> <p>Matching subjects can hide different causes. Different subjects and channels can
 also describe the same cause. An unknown tenant is not evidence for a merge.</p> <h2>Review and limits</h2> <p>The original triage procedure and decision carry old review dates. Their rendered
 stale warnings require a new review before use. A recent review date on the
-incident page does not make its one-bug claim correct.</p> <p>This page uses the knowledge base export dated 2026-10-04. It is not a live queue.
-The desk continues to work. Reconcile later reports and ticket changes before
-operational use. This decision does not claim that either product bug is fixed.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-11RG-T358</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
+incident page does not make its one-bug claim correct.</p> <p>The counts above describe the knowledge base export dated 2026-10-04. They are
+historical counts, not a live queue.</p> <h2>Desk update after the export</h2> <p>The <a href="https://hq.mega.dev/challenges/what-it-shows" rel="nofollow">course desk update</a> reports that
+the source incident closed on 5 October.</p> <ul><li>Parser: <strong>FIXED</strong>. The engineering note is <code>fix(dates): parse dd/mm for eu locales</code>.
+Close the <a href="https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/1" rel="nofollow">parser issue</a> as completed.</li> <li>Hint: <strong>WON’T FIX</strong>. The engineering note is <code>booking-v3 form retired</code>.
+Close the <a href="https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/2" rel="nofollow">hint issue</a> as not planned. Retirement is not a hint fix.</li></ul> <p>These outcomes come from the desk update. This review did not run the product or
+independently verify its deployment. The original export and its calculated
+counts remain unchanged.</p> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-11RG-T358</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!--]--><!--]--><!----><!--]--><!--]--><!--]--><!----> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_18worio = {
+					__sveltekit_11hxax = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
-						version: "1794499084125"
+						version: "1794499154773"
 					};
 
 					const element = document.currentScript.parentElement;
 
 					import("../../../_app/immutable/entry/start.CZaYxbvC.js").then(async (kit) => {
-						kit.init(__sveltekit_18worio);
-						const app = await import("../../../_app/immutable/entry/app.DzvqeDHd.js");
+						kit.init(__sveltekit_11hxax);
+						const app = await import("../../../_app/immutable/entry/app.BE-YGs6r.js");
 						kit.start(app, element, {
 							node_ids: [0, 4],
 							data: [null,null],

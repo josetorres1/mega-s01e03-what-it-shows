@@ -89,8 +89,23 @@ The original triage procedure and decision carry old review dates. Their rendere
 stale warnings require a new review before use. A recent review date on the
 incident page does not make its one-bug claim correct.
 
-This page uses the knowledge base export dated 2026-10-04. It is not a live queue.
-The desk continues to work. Reconcile later reports and ticket changes before
-operational use. This decision does not claim that either product bug is fixed.
+The counts above describe the knowledge base export dated 2026-10-04. They are
+historical counts, not a live queue.
+
+## Desk update after the export
+
+The [course desk update](https://hq.mega.dev/challenges/what-it-shows) reports that
+the source incident closed on 5 October.
+
+- Parser: **FIXED**. The engineering note is `fix(dates): parse dd/mm for eu locales`.
+  Close the [parser issue](https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/1)
+  as completed.
+- Hint: **WON'T FIX**. The engineering note is `booking-v3 form retired`.
+  Close the [hint issue](https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/2)
+  as not planned. Retirement is not a hint fix.
+
+These outcomes come from the desk update. This review did not run the product or
+independently verify its deployment. The original export and its calculated
+counts remain unchanged.
 
 <RenderStamp {signature} />
