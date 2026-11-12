@@ -4,7 +4,7 @@ title: '0002 · Split ticket 4471 by cause'
 owner: josetorres1
 status: accepted
 reviewed: '2026-11-12'
-signature: 'Jose Torres / josetorres1 / MEGA S01E03'
+signature: 'v1.eyJzdWIiOiI1OTI0IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQ0OTkxOTYsImV4cCI6MTc5NDU4NTU5Nn0.mR03R6kJM-Xs-vTiWvGfOMwART0WYo0DmA1oBv59Oq4'
 ---
 
 <script>
