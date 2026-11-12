@@ -1,0 +1,96 @@
+---
+layout: runbook
+title: '0002 · Split ticket 4471 by cause'
+owner: josetorres1
+status: accepted
+reviewed: '2026-11-12'
+signature: 'Jose Torres / josetorres1 / MEGA S01E03'
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import QueueTimeline from '#lib/kb/QueueTimeline.svelte';
+  import DedupeExplorer from '#lib/kb/DedupeExplorer.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+## Decision
+
+This record replaces [decision 0001](/kb/decisions/0001-dedupe-by-subject).
+Keep that accepted record as history. Stop merging reports by subject alone.
+
+Merge reports only when evidence shows the same cause. Read the report body,
+resolve the tenant, and check its locale, booking-form version, and channel.
+Keep reports separate when the cause is unknown. Ask for the missing evidence.
+
+## What the rendered incident shows
+
+The [incident page](/kb/incidents/4471) calls the ticket one known parser bug.
+Its rendered table contradicts that claim. The table separates a shared parser
+failure from an incorrect hint in booking-v3.
+
+<CauseTable ticket={4471} />
+
+The export can contain the same report more than once. Count each report ID
+once, then select reports merged into the incident. Use the tenant directory
+and the report channel to classify them. Browser locale and intake tags are
+initial guesses, not confirmed causes.
+
+### Shared parser
+
+For a day-first tenant, the shared parser reads a day-first date as month first.
+An ambiguous date can therefore select the wrong month and day. App and email
+reports follow this cause. Form reports also follow it when the tenant uses
+booking-v2.
+
+Track this problem in the [parser issue](https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/1).
+
+Engineering must make parsing follow the documented input contract. Confirm the
+result with a day-first tenant and an ambiguous date. Include app, email, and
+booking-v2 entry paths. A hint-only change will not fix these reports.
+
+### Booking-v3 hint
+
+For a day-first tenant on booking-v3, the form displays `MM/DD/YYYY` but reads the
+input using the tenant's day-first convention. A person who follows the hint can
+therefore select the wrong date. These form reports need a separate ticket and fix.
+
+Engineering must make the visible hint agree with the form's parsing convention.
+Confirm that a person can follow the hint and obtain the intended date. Include
+a day-first booking-v3 tenant. A shared-parser change alone does not correct the hint.
+
+Track this problem in the [booking-v3 hint issue](https://github.com/josetorres1/mega-s01e03-what-it-shows/issues/2).
+
+## Reports that need care
+
+The table notes reports that the desk read as a one-day move. They remain included
+in their tenant-based cause counts. Their wording alone does not establish a
+separate timezone bug. Check the entered date, stored date, timezone, and displayed
+date before changing that classification. Do not count them again as another issue.
+
+## Arrival time is not merge time
+
+<QueueTimeline ticket={4471} />
+
+Reports arrived across several months. The merge spike reflects desk activity,
+not a matching spike in new reports. A merge timestamp does not establish when a
+failure began. Use receipt times for arrival trends and merge times for desk activity.
+
+## Check the rule
+
+<DedupeExplorer />
+
+Matching subjects can hide different causes. Different subjects and channels can
+also describe the same cause. An unknown tenant is not evidence for a merge.
+
+## Review and limits
+
+The original triage procedure and decision carry old review dates. Their rendered
+stale warnings require a new review before use. A recent review date on the
+incident page does not make its one-bug claim correct.
+
+This page uses the knowledge base export dated 2026-10-04. It is not a live queue.
+The desk continues to work. Reconcile later reports and ticket changes before
+operational use. This decision does not claim that either product bug is fixed.
+
+<RenderStamp {signature} />
